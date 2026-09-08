@@ -1,0 +1,72 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0B0F17;
+  --foreground: #F3F4F6;
+  --color-brand-surface: #131B2E;
+  --color-brand-surface-hover: #18223A;
+  --color-neon-violet: #A855F7;
+  --color-neon-cyan: #06B6D4;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  --font-mono: var(--font-geist-mono), monospace;
+  
+  /* Brand Palette Extends for Tailwind v4 */
+  --color-brand-bg: var(--background);
+  --color-brand-surface: var(--color-brand-surface);
+  --color-brand-surface-hover: var(--color-brand-surface-hover);
+  --color-neon-violet: var(--color-neon-violet);
+  --color-neon-cyan: var(--color-neon-cyan);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, -apple-system, sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* Custom Utilities for Neon Accents & Transitions */
+@layer utilities {
+  .neon-glow {
+    box-shadow: 0 0 20px -3px rgba(168, 85, 247, 0.35);
+  }
+
+  .neon-glow-cyan {
+    box-shadow: 0 0 20px -3px rgba(6, 182, 212, 0.35);
+  }
+
+  .neon-border {
+    border-color: rgba(139, 92, 246, 0.3);
+  }
+
+  .glass-card {
+    background: rgba(19, 27, 46, 0.85);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(139, 92, 246, 0.2);
+  }
+}
+
+/* Sleek Dark Mode Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0B0F17;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1E293B;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #7C3AED;
+}
