@@ -4,8 +4,8 @@
     "main":  "dist/server.js",
     "scripts":  {
                     "dev":  "tsx watch src/server.ts",
-                    "build":  "echo \u0027Skipping tsc build\u0027",
-                    "start":  "node dist/server.js",
+                    "build":  "npx prisma generate",
+                    "start":  "npx ts-node src/server.ts",
                     "prisma:generate":  "prisma generate",
                     "prisma:migrate":  "prisma migrate dev",
                     "seed":  "prisma db seed"
@@ -38,6 +38,7 @@
                             "@types/node":  "^26.4.1",
                             "@types/uuid":  "^10.0.0",
                             "prisma":  "^6.19.3",
+                            "ts-node":  "^10.9.2",
                             "ts-node-dev":  "^2.0.0",
                             "tsx":  "^4.23.13",
                             "typescript":  "^5.9.3"
