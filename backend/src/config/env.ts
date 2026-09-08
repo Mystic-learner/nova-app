@@ -9,7 +9,7 @@ const envSchema = z.object({
   DATABASE_URL: z.string().min(1, 'DATABASE_URL is required'),
   JWT_SECRET: z.string().min(32, 'JWT_SECRET must be at least 32 characters'),
   JWT_REFRESH_SECRET: z.string().min(32, 'JWT_REFRESH_SECRET must be at least 32 characters'),
-  CORS_ORIGIN: z.string().default('http://localhost:3000'),
+  CORS_ORIGIN: z.string().default('https://nova-app-finalised.vercel.app'),
 });
 
 const _env = envSchema.safeParse(process.env);
